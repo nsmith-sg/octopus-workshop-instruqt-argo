@@ -9,30 +9,20 @@ parameter "parameter.worker.pool" {
     label = "Worker Pool"
 }
 
-
-
-parameter "parameter.database.name" {
+parameter "parameter.respositry.url" {
     display_settings = {
         Octopus.ControlType = "SingleLineText"
     }
-    help_text = "The name of the database you want to migrate"
-    label = "Database Name"
+    help_text = "URL of terraform repo"
+    label = "Repository URL"
 }
 
-parameter "parameter.database.user" {
+parameter "parameter.template.directory" {
     display_settings = {
         Octopus.ControlType = "SingleLineText"
     }
-    help_text = "User of database connection string"
-    label = "Database User"
-}
-
-parameter "parameter.database.password" {
-    display_settings = {
-        Octopus.ControlType = "Sensitive"
-    }
-    help_text = "Password of database service "
-    label = "Database Password"
+    help_text = "Where there terraform is in the repo"
+    label = "Template Directory"
 }
 
 parameter "parameter.container.feed" {
