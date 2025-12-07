@@ -4,7 +4,6 @@ step "sql-create-database-user-if-not-exists" {
     action {
         properties = {
             createDatabaseName = "#{SQLServer.Database.Name}"
-            createSqlLogin = "#{SQLServer.Database.UserName}"
             createSqlLoginPasswordWhoHasRights = "#{SQLServer.Database.Password}"
             createSqlLoginUserWhoHasCreateUserRights = "#{SQLServer.Database.UserName}"
             createSqlServer = "#{SQLServer.Database.Host}"
