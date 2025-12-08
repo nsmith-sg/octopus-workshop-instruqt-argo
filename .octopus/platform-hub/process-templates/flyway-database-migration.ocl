@@ -314,6 +314,7 @@ step "flyway-database-migrations-dryrun" {
             Flyway.Command.Value = "check dry run"
             Flyway.Database.User = "#{parameter.database.user}"
             Flyway.Database.User.Password = "#{parameter.database.password}"
+            Flyway.Package.Value = "parameter.database.package"
             Flyway.Target.Url = "jdbc:sqlserver://#{parameter.database.host}:1433;databaseName=#{parameter.database.name};encrypt=false;trustServerCertificate=true;"
             Octopus.Action.EnabledFeatures = "Octopus.Features.SelectPowerShellEditionForWindows"
             Octopus.Action.PowerShell.Edition = "Core"
@@ -1449,6 +1450,8 @@ step "flyway-database-migrations-dryrun" {
 
         packages "Flyway.Package.Value" {
             acquisition_location = "Server"
+            feed = "octopus-server-built-in"
+            package_id = ""
             properties = {
                 Extract = "True"
                 PackageParameterName = "Flyway.Package.Value"
